@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XMSwizzing.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSError *error;
+    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionBefore usingBlock:^
+    {
+        
+        
+        
+    } error:&error];
+    
+    if (error)
+    {
+        NSLog(@"%@",error);
+    }
+    
     return YES;
 }
 

@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CommomProtocol.h"
+#import "commomHeader.h"
+#import "AspectTracker.h"
 
 @interface AspectIdentifier : NSObject
+
++ (instancetype)identifierWithSelector:(SEL)selector object:(id)object options:(AspectOptions)options block:(id)block error:(NSError **)error;
+- (BOOL)invokeWithInfo:(id<AspectInfo>)info;
+
+@property (nonatomic, assign) SEL selector;
+@property (nonatomic, strong) id block;
+@property (nonatomic, strong) NSMethodSignature *blockSignature;
+@property (nonatomic, weak) id object;
+@property (nonatomic, assign) AspectOptions options;
 
 @end

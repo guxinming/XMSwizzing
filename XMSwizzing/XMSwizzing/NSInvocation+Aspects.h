@@ -10,4 +10,6 @@
 
 @interface NSInvocation (Aspects)
 
+- (NSArray *)aspects_arguments;
+
 @end

@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AspectIdentifier.h"
+#import "commomHeader.h"
 
 @interface AspectsContainer : NSObject
+
+- (void)addAspect:(AspectIdentifier *)aspect withOptions:(AspectOptions)injectPosition;
+- (BOOL)removeAspect:(id)aspect;
+- (BOOL)hasAspects;
+@property (atomic, copy) NSArray *beforeAspects;
+@property (atomic, copy) NSArray *insteadAspects;
+@property (atomic, copy) NSArray *afterAspects;
 
 @end

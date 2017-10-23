@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CommomProtocol.h"
+#import "NSInvocation+Aspects.h"
 
-@interface AspectInfo : NSObject
+@interface AspectInfo : NSObject <AspectInfo>
+
+- (id)initWithInstance:(__unsafe_unretained id)instance invocation:(NSInvocation *)invocation;
+@property (nonatomic, unsafe_unretained, readonly) id instance;
+@property (nonatomic, strong, readonly) NSArray *arguments;
+@property (nonatomic, strong, readonly) NSInvocation *originalInvocation;
 
 @end

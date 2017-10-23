@@ -15,6 +15,12 @@
 		68847FBF1F988CAE00E883FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FBE1F988CAE00E883FD /* main.m */; };
 		68847FC91F988CAF00E883FD /* XMSwizzingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FC81F988CAF00E883FD /* XMSwizzingTests.m */; };
 		68847FD41F988CAF00E883FD /* XMSwizzingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FD31F988CAF00E883FD /* XMSwizzingUITests.m */; };
+		68847FE31F988E3800E883FD /* XMSwizzing.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FE21F988E3800E883FD /* XMSwizzing.m */; };
+		68847FE61F9891F900E883FD /* AspectIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FE51F9891F900E883FD /* AspectIdentifier.m */; };
+		68847FEB1F98967000E883FD /* AspectTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FEA1F98967000E883FD /* AspectTracker.m */; };
+		68847FEE1F98982E00E883FD /* AspectsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FED1F98982E00E883FD /* AspectsContainer.m */; };
+		68847FF11F998DBD00E883FD /* AspectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FF01F998DBD00E883FD /* AspectInfo.m */; };
+		68847FF41F998EAE00E883FD /* NSInvocation+Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 68847FF31F998EAE00E883FD /* NSInvocation+Aspects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,20 @@
 		68847FCF1F988CAF00E883FD /* XMSwizzingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMSwizzingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68847FD31F988CAF00E883FD /* XMSwizzingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMSwizzingUITests.m; sourceTree = "<group>"; };
 		68847FD51F988CAF00E883FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68847FE11F988E3800E883FD /* XMSwizzing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMSwizzing.h; sourceTree = "<group>"; };
+		68847FE21F988E3800E883FD /* XMSwizzing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMSwizzing.m; sourceTree = "<group>"; };
+		68847FE41F9891F900E883FD /* AspectIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectIdentifier.h; sourceTree = "<group>"; };
+		68847FE51F9891F900E883FD /* AspectIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AspectIdentifier.m; sourceTree = "<group>"; };
+		68847FE71F98923A00E883FD /* CommomProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommomProtocol.h; sourceTree = "<group>"; };
+		68847FE81F98929100E883FD /* commomHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commomHeader.h; sourceTree = "<group>"; };
+		68847FE91F98967000E883FD /* AspectTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectTracker.h; sourceTree = "<group>"; };
+		68847FEA1F98967000E883FD /* AspectTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AspectTracker.m; sourceTree = "<group>"; };
+		68847FEC1F98982E00E883FD /* AspectsContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectsContainer.h; sourceTree = "<group>"; };
+		68847FED1F98982E00E883FD /* AspectsContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AspectsContainer.m; sourceTree = "<group>"; };
+		68847FEF1F998DBD00E883FD /* AspectInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectInfo.h; sourceTree = "<group>"; };
+		68847FF01F998DBD00E883FD /* AspectInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AspectInfo.m; sourceTree = "<group>"; };
+		68847FF21F998EAE00E883FD /* NSInvocation+Aspects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+Aspects.h"; sourceTree = "<group>"; };
+		68847FF31F998EAE00E883FD /* NSInvocation+Aspects.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+Aspects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +130,20 @@
 				68847FBA1F988CAE00E883FD /* LaunchScreen.storyboard */,
 				68847FBD1F988CAE00E883FD /* Info.plist */,
 				68847FBE1F988CAE00E883FD /* main.m */,
+				68847FE11F988E3800E883FD /* XMSwizzing.h */,
+				68847FE21F988E3800E883FD /* XMSwizzing.m */,
+				68847FE41F9891F900E883FD /* AspectIdentifier.h */,
+				68847FE51F9891F900E883FD /* AspectIdentifier.m */,
+				68847FE71F98923A00E883FD /* CommomProtocol.h */,
+				68847FE81F98929100E883FD /* commomHeader.h */,
+				68847FE91F98967000E883FD /* AspectTracker.h */,
+				68847FEA1F98967000E883FD /* AspectTracker.m */,
+				68847FEC1F98982E00E883FD /* AspectsContainer.h */,
+				68847FED1F98982E00E883FD /* AspectsContainer.m */,
+				68847FEF1F998DBD00E883FD /* AspectInfo.h */,
+				68847FF01F998DBD00E883FD /* AspectInfo.m */,
+				68847FF21F998EAE00E883FD /* NSInvocation+Aspects.h */,
+				68847FF31F998EAE00E883FD /* NSInvocation+Aspects.m */,
 			);
 			path = XMSwizzing;
 			sourceTree = "<group>";
@@ -265,8 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68847FEB1F98967000E883FD /* AspectTracker.m in Sources */,
 				68847FB41F988CAE00E883FD /* ViewController.m in Sources */,
+				68847FE61F9891F900E883FD /* AspectIdentifier.m in Sources */,
+				68847FF11F998DBD00E883FD /* AspectInfo.m in Sources */,
+				68847FE31F988E3800E883FD /* XMSwizzing.m in Sources */,
+				68847FF41F998EAE00E883FD /* NSInvocation+Aspects.m in Sources */,
 				68847FBF1F988CAE00E883FD /* main.m in Sources */,
+				68847FEE1F98982E00E883FD /* AspectsContainer.m in Sources */,
 				68847FB11F988CAE00E883FD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
