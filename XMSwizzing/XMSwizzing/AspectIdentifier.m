@@ -99,11 +99,6 @@ static BOOL aspect_isCompatibleBlockSignature(NSMethodSignature *blockSignature,
     return YES;
 }
 
-static SEL aspect_aliasForSelector(SEL selector) {
-    NSCParameterAssert(selector);
-    return NSSelectorFromString([AspectsMessagePrefix stringByAppendingFormat:@"_%@", NSStringFromSelector(selector)]);
-}
-
 static void aspect_destroyContainerForObject(id<NSObject> self, SEL selector) {
     NSCParameterAssert(self);
     SEL aliasSelector = aspect_aliasForSelector(selector);

@@ -29,4 +29,9 @@ static NSString *const AspectsMessagePrefix = @"aspects_";
 static NSString *const AspectsSubclassSuffix = @"_Aspects_";
 static NSString *const AspectsForwardInvocationSelectorName = @"__aspects_forwardInvocation:";
 
+static SEL aspect_aliasForSelector(SEL selector) {
+    NSCParameterAssert(selector);
+    return NSSelectorFromString([AspectsMessagePrefix stringByAppendingFormat:@"_%@", NSStringFromSelector(selector)]);
+}
+
 #endif /* Header_h */

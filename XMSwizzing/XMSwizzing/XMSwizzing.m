@@ -30,13 +30,9 @@ aspectsToRemove = [aspectsToRemove?:@[] arrayByAddingObject:aspect]; \
     return aspect_add((id)self, selector, options, block, error);
 }
 
-static SEL aspect_aliasForSelector(SEL selector) {
-    NSCParameterAssert(selector);
-    return NSSelectorFromString([AspectsMessagePrefix stringByAppendingFormat:@"_%@", NSStringFromSelector(selector)]);
-}
-
 static AspectsContainer *aspect_getContainerForObject(NSObject *self, SEL selector) {
     NSCParameterAssert(self);
+    //改变方法名称，在原有基础上拼接 aspects_
     SEL aliasSelector = aspect_aliasForSelector(selector);
     AspectsContainer *aspectContainer = objc_getAssociatedObject(self, aliasSelector);
     if (!aspectContainer) {
@@ -162,9 +158,11 @@ static Class aspect_hookClass(NSObject *self, NSError **error) {
         
         // We swizzle a class object, not a single object.
     }else if (class_isMetaClass(baseClass)) {
+        //如果是 元类, hook 住 __aspects_forwardInvocation:方法，并将其指向新的方法，返回的是当前类
         return aspect_swizzleClassInPlace((Class)self);
         // Probably a KVO'ed class. Swizzle in place. Also swizzle meta classes in place.
     }else if (statedClass != baseClass) {
+        //返回的是当前的类的子类，
         return aspect_swizzleClassInPlace(baseClass);
     }
     
@@ -252,10 +250,15 @@ static id aspect_add(id self, SEL selector, AspectOptions options, id block, NSE
 
     __block AspectIdentifier *identifier = nil;
     aspect_performLocked(^{
+        //首先判断是否可以替换
         if (aspect_isSelectorAllowedAndTrack(self, selector, options, error)) {
+            //获取容器，如果没有创建一个 并且将容器与方法名称动态关联
             AspectsContainer *aspectContainer = aspect_getContainerForObject(self, selector);
+            //创建identifier
             identifier = [AspectIdentifier identifierWithSelector:selector object:self options:options block:block error:error];
             if (identifier) {
+                
+                //并且添加到容器中
                 [aspectContainer addAspect:identifier withOptions:options];
 
                 // Modify the class to allow message interception.
