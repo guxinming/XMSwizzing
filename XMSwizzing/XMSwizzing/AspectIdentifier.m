@@ -190,7 +190,7 @@ static void aspect_cleanupHookedClassAndSelector(NSObject *self, SEL selector) {
         klass = (Class)self;
     }
     
-    // Check if the method is marked as forwarded and undo that.
+    //把hook的方法在hook回来
     Method targetMethod = class_getInstanceMethod(klass, selector);
     IMP targetMethodIMP = method_getImplementation(targetMethod);
     if (aspect_isMsgForwardIMP(targetMethodIMP)) {
@@ -205,7 +205,7 @@ static void aspect_cleanupHookedClassAndSelector(NSObject *self, SEL selector) {
        // AspectLog(@"Aspects: Removed hook for -[%@ %@].", klass, NSStringFromSelector(selector));
     }
     
-    // Deregister global tracked selector
+    // 从记录中移除
     aspect_deregisterTrackedSelector(self, selector);
     
     // Get the aspect container and check if there are any hooks remaining. Clean up if there are not.
