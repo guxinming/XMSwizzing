@@ -6,6 +6,5 @@ target ‘BXHUD’ do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
  
   pod ‘MBProgressHUD’
-  pod ‘SDWebImage’
 
 end
